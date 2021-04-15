@@ -54,7 +54,7 @@ export function Header() {
                 ml="auto"
             >
 
-        
+
                 <HStack
                     spacing="8"
                     mx="8"
@@ -70,19 +70,19 @@ export function Header() {
 
 
                 <Flex
-                align="center"
+                    align="center"
                 >
                     <Box>
                         <Text mr="4" textAlign="right">
                             Yan Gurgel
                             </Text>
                         <Text color="gray.300" fontSize="small">
-                            yan.gurgel@gmail.com
+                            yan.gurgel@email.com
                             </Text>
                     </Box>
 
-                    <Avatar size="md" name="Yan Gurgel" src="https://github.com/Yan-Gurgel.png"/>
-                </Flex>       
+                    <Avatar size="md" name="Yan Gurgel" src="https://github.com/Yan-Gurgel.png" />
+                </Flex>
             </Flex>
         </Flex>
     );
