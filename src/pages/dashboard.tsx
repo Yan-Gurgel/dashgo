@@ -22,7 +22,7 @@ const options = {
         show: false,
     },
     dataLabels: {
-        enabled: false,
+        enabled: true,
     },
     tooltip:{
         enabled: false,
@@ -42,7 +42,7 @@ const options = {
             '2021-04-13T00:00:00.000Z',
             '2021-04-14T00:00:00.000Z',
             '2021-04-15T00:00:00.000Z',
-            '2021-04-16T00:00:00.000Z',
+            '2021-04-16T00:00:00.000Z'
         ],
     },
     fill: {
@@ -56,8 +56,14 @@ const options = {
     },
 };
 
-const series = [
-    { name: 'series1', data: [31, 120, 10, 28, 51, 18, 109 ]}
+const tagsSolicitadas = [
+    { name: 'Empresa 1', data: [31, 120, 10, 28, 51, 18, 109 ]},
+    { name: 'Empresa 2', data: [40, 80, 50, 25, 5, 18, 80 ]}
+];
+
+const tagsUtilizadas = [
+    { name: 'Empresa 1', data: [3, 40, 10, 23, 45, 18, 35 ]},
+    { name: 'Empresa 2', data: [20, 35, 15, 25, 5, 18, 19 ]}
 ];
 
 export default function Dashboad() {
@@ -83,9 +89,9 @@ export default function Dashboad() {
                         borderRadius={8}
                         pb="4"
                     >
-                        <Text fontSize="lg" mb="4">Inscritos da semana  </Text>
+                        <Text fontSize="lg" mb="4">Tags solicitadas  </Text>
                         {/*options=configuração/ series = dados do gráfico */}
-                        <Chart options={ options } series={ series } type="area" height={160} />
+                        <Chart options={ options } series={ tagsSolicitadas } type="area" height={160} />
                     </Box>
 
 
@@ -95,8 +101,8 @@ export default function Dashboad() {
                         borderRadius={8}
                         pb="4"
                     >
-                        <Text fontSize="lg" mb="4">Taxa de abertura</Text>
-                        <Chart options={ options } series={ series } type="area" height={160} />
+                        <Text fontSize="lg" mb="4">Tags utilizadas</Text>
+                        <Chart options={ options } series={ tagsUtilizadas } type="area" height={160} />
                     </Box>
                 </SimpleGrid>
 
