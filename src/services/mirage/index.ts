@@ -4,7 +4,7 @@ import faker from 'faker'
 type User = {
   name: string;
   email: string;
-  create_at: string;
+  created_at: string;
 }
 
 export function makeServer(){
@@ -21,14 +21,14 @@ export function makeServer(){
         email() {
           return faker.internet.email().toLowerCase();
         },
-        createAt() {
+        createdAt() {
           return faker.date.recent(10)
         },
       })
     },
 
     seeds(server) {
-      server.createList('User', 200)
+      server.createList('user', 10)
     },
 
     routes(){
