@@ -45,6 +45,6 @@ const totalCount = Number(headers['x-total-count'])
 
 export function useUsers(page: number) {
   return useQuery(['users', page], () => getUsers(page), {
-    staleTime: 1000*5
+    staleTime: 1000 * 60 * 10 //10 minutos de dados 'fresh'
 })
 }
