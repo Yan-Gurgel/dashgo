@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery, UseQueryOptions } from "react-query";
 import { number } from "yup/lib/locale";
 import { api } from "../api";
 
@@ -43,8 +43,9 @@ const totalCount = Number(headers['x-total-count'])
 }
 
 
-export function useUsers(page: number) {
+export function useUsers(page: number, options: UseQueryOptions) {
   return useQuery(['users', page], () => getUsers(page), {
-    staleTime: 1000 * 60 * 10 //10 minutos de dados 'fresh'
-})
+    staleTime: 1000 * 60 * 10, //10 minutos de dados 'fresh'
+    ...options, 
+  })
 }
